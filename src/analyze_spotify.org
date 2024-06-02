@@ -2,28 +2,43 @@
 #+TITLE: [[https://belakor.bandcamp.com/track/countless-skies][Songs to pave the seasons]]
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../assets/style.css"/>
 
-This is the analysis of my [[https://support.spotify.com/us/article/understanding-my-data/][Spotify data]] for the period 2016-2024. The results confirm that
-I have a somewhat eclectic music taste, but progressive death metal is clearly my preferred
+This is the analysis of my [[https://support.spotify.com/us/article/understanding-my-data/][Spotify data]] for the period 2016-2024. The results show that
+I have an eclectic music taste, but progressive death metal is clearly my preferred
 genre.
 
 ** Technical details
 
 For this task, I rely on [[https://mlochbaum.github.io/BQN/index.html][BQN]], my favorite array language.
 
-#+begin_src bqn :results silent
-  ⟨P⇐Parse⟩ ← •Import "json.bqn"
-  spd ← P •file.Chars "data.json"
-  top ← 20
+#+begin_src bqn
+  ⟨P⇐Parse⟩ ← •Import "../bqn-libs/json.bqn"
+  "Load data and libraries" ⊣ spd ← P •file.Chars "data.json"
 #+end_src
+
+#+RESULTS:
+
+We need some additional structural information, namely index of the songs,
+artists, elapsed time, and the length of the result.
+
+#+begin_src bqn
+  s‿a‿m‿l ← 20 ∾˜1⊸∾¨ 7‿8‿3
+#+end_src
+
+#+RESULTS:
+: 0
 
 ** Top songs
 
 #+begin_src bqn
-  ≢⊑(⍒(⊢´⥊)¨)⊸⊏ spd
+  musicrow ← 1⊸⊏˘>spd
+  songs ← ⊐7⊸⊏˘ musicrow
+  groupssongs ← songs ⊔ musicrow
+  idxsort ← ⍒(+´3⊏⍉)¨ groupssongs
+  ∾(⍷7⊏⍉)¨(1+↕t)⊏ idxsort ⊏ groupssongs
 #+end_src
 
 #+RESULTS:
-: ⟨ 2 21 ⟩
+: ⟨ "Countless Skies" "Divertimento I, K.136: Allegro" "The Numbers" "Autre temps" "Ghost of Perdition" "Crossing the Road Material" "Hoppípolla" "Ether" "Colossus" "River" "El Tete" "Will o the Wisp" "Pakumba" "Damned Rope" "Eternal Rains Will Come" "La femme d'argent" "Bajanda" "Nimrodel - Medley" "Breathe (In The Air) - 2011 Remastered Version" "In The Shadow Of Our Pale Companion" ⟩
 
 ** Top artists
 

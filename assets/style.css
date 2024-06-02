@@ -1,0 +1,30 @@
+/* BQN386 Font Face */
+@font-face {
+    font-family: 'BQN';
+    src: url('BQN386.ttf') format('truetype');
+  }
+  
+/* Applying the BQN386 Font */
+body, input, select, textarea, pre, code, kbd {
+  font-family: 'BQN', monospace;
+}
+
+/* Basic styling for code elements */
+code, pre {
+  background-color: #e3e7e7;
+  color: #292929;
+  font-size: 0.94em;
+}
+
+pre {
+  overflow-x: auto;
+  margin: 1.0em 0.4em;
+  padding: 0.0em;
+  line-height: 1.2;
+}
+
+/* Hyperlinks */
+a:link, a:visited {
+  color: #267CB9; 
+  text-decoration: none;
+}

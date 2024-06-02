@@ -1,0 +1,32 @@
+# -*- eval: (face-remap-add-relative 'default '(:family "BQN386 Unicode" :height 180)); -*-
+#+TITLE: [[https://belakor.bandcamp.com/track/countless-skies][Songs to pave the seasons]]
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../assets/style.css"/>
+
+This is the analysis of my [[https://support.spotify.com/us/article/understanding-my-data/][Spotify data]] for the period 2016-2024. The results confirm that
+I have a somewhat eclectic music taste, but progressive death metal is clearly my preferred
+genre.
+
+** Technical details
+
+For this task, I rely on [[https://mlochbaum.github.io/BQN/index.html][BQN]], my favorite array language.
+
+#+begin_src bqn :results silent
+  ⟨P⇐Parse⟩ ← •Import "json.bqn"
+  spd ← P •file.Chars "data.json"
+  top ← 20
+#+end_src
+
+** Top songs
+
+#+begin_src bqn
+  ≢⊑(⍒(⊢´⥊)¨)⊸⊏ spd
+#+end_src
+
+#+RESULTS:
+: ⟨ 2 21 ⟩
+
+** Top artists
+
+#+begin_src bqn
+
+#+end_src

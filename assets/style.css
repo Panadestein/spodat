@@ -25,7 +25,7 @@ pre {
 
 pre.src {
   position: relative;
-  overflow: visible;
+  overflow-x: auto;
   margin: 0 2em 0 2em;
   background-color: #e3e7e7;
   border: 1px solid #ccc;

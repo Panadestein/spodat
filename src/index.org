@@ -1,6 +1,6 @@
 # -*- eval: (face-remap-add-relative 'default '(:family "BQN386 Unicode" :height 180)); -*-
-#+TITLE: [[https://belakor.bandcamp.com/track/countless-skies][Songs to pave the seasons]]
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../assets/style.css"/>
+#+TITLE: Songs to pave the seasons
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="assets/style.css"/>
 
 Analysis of my [[https://support.spotify.com/us/article/understanding-my-data/][Spotify data]] for the period 2016-2024.
 
@@ -29,7 +29,7 @@ Define a dyadic block function to execute the queries:
 
 ** Top songs
 
-#+begin_src bqn
+#+begin_src bqn :exports both
   s Q spd	
 #+end_src
 
@@ -61,7 +61,7 @@ Define a dyadic block function to execute the queries:
 
 ** Top artists
 
-#+begin_src bqn
+#+begin_src bqn :exports both
   a Q spd
 #+end_src
 

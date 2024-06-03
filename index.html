@@ -200,9 +200,9 @@
 Analysis of my <a href="https://support.spotify.com/us/article/understanding-my-data/">Spotify data</a> for the period 2016-2024.
 </p>
 
-<div id="outline-container-orgd1435c3" class="outline-2">
-<h2 id="orgd1435c3">Technical details</h2>
-<div class="outline-text-2" id="text-orgd1435c3">
+<div id="outline-container-org5eaee16" class="outline-2">
+<h2 id="org5eaee16">Technical details</h2>
+<div class="outline-text-2" id="text-org5eaee16">
 <p>
 This is a suitable task for an array language, so I rely on <a href="https://mlochbaum.github.io/BQN/index.html">BQN</a> which is my
 favorite one:
@@ -225,19 +225,19 @@ artists, elapsed time, and the length of the desired result.
 </div>
 
 <p>
-Define a dyadic block function to execute the queries:
+Define a (52 chars) dyadic block function to execute the queries:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-bqn">Q ← {⍉l≍∾(⍷𝕨⊏⍉)¨l⊏ ((⍒(+´m⊏⍉)¨)⊸⊏ (⊐𝕨⊸⊏˘) ⊔ ⊢) 1⊸⊏˘&gt; 𝕩}
+<pre class="src src-bqn">Q ← {l≍˘∾(⍷𝕨⊸⊏˘)¨ l⊏ ((⍒(+´m⊏⍉)¨)⊸⊏𝕨⊸⊏˘⊐⊸⊔⊢) &gt;1⊏¨ 𝕩}
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org6c15604" class="outline-2">
-<h2 id="org6c15604">Top songs</h2>
-<div class="outline-text-2" id="text-org6c15604">
+<div id="outline-container-org008b33d" class="outline-2">
+<h2 id="org008b33d">Top songs</h2>
+<div class="outline-text-2" id="text-org008b33d">
 <div class="org-src-container">
 <pre class="src src-bqn">s Q spd	
 </pre>
@@ -270,9 +270,9 @@ Define a dyadic block function to execute the queries:
 </div>
 </div>
 
-<div id="outline-container-orgf4ce777" class="outline-2">
-<h2 id="orgf4ce777">Top artists</h2>
-<div class="outline-text-2" id="text-orgf4ce777">
+<div id="outline-container-org46d7192" class="outline-2">
+<h2 id="org46d7192">Top artists</h2>
+<div class="outline-text-2" id="text-org46d7192">
 <div class="org-src-container">
 <pre class="src src-bqn">a Q spd
 </pre>

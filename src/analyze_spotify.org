@@ -6,7 +6,7 @@ Analysis of my [[https://support.spotify.com/us/article/understanding-my-data/][
 
 ** Technical details
 
-This task is very suitable for an array language, so I rely on [[https://mlochbaum.github.io/BQN/index.html][BQN]] which is my
+This task is suitable for an array language, so I rely on [[https://mlochbaum.github.io/BQN/index.html][BQN]] which is my
 favorite one:
 
 #+begin_src bqn :results none

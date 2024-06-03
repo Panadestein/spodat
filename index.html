@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title><a href="https://belakor.bandcamp.com/track/countless-skies">Songs to pave the seasons</a></title>
+<title>Songs to pave the seasons</title>
 <meta name="generator" content="Org mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
@@ -191,18 +191,18 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="../assets/style.css"/>
+<link rel="stylesheet" type="text/css" href="assets/style.css"/>
 </head>
 <body>
 <div id="content">
-<h1 class="title"><a href="https://belakor.bandcamp.com/track/countless-skies">Songs to pave the seasons</a></h1>
+<h1 class="title">Songs to pave the seasons</h1>
 <p>
 Analysis of my <a href="https://support.spotify.com/us/article/understanding-my-data/">Spotify data</a> for the period 2016-2024.
 </p>
 
-<div id="outline-container-orgd107626" class="outline-2">
-<h2 id="orgd107626"><span class="section-number-2">1</span> Technical details</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-org632dce8" class="outline-2">
+<h2 id="org632dce8">Technical details</h2>
+<div class="outline-text-2" id="text-org632dce8">
 <p>
 This task is suitable for an array language, so I rely on <a href="https://mlochbaum.github.io/BQN/index.html">BQN</a> which is my
 favorite one:
@@ -235,23 +235,73 @@ Define a dyadic block function to execute the queries:
 </div>
 </div>
 
-<div id="outline-container-org965f893" class="outline-2">
-<h2 id="org965f893"><span class="section-number-2">2</span> Top songs</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-orgfd333d6" class="outline-2">
+<h2 id="orgfd333d6">Top songs</h2>
+<div class="outline-text-2" id="text-orgfd333d6">
 <div class="org-src-container">
 <pre class="src src-bqn">s Q spd	
 </pre>
 </div>
+
+<pre class="example">
+┌─                                                     
+╵ 1  "Countless Skies"                                 
+  2  "Divertimento I, K.136: Allegro"                  
+  3  "The Numbers"                                     
+  4  "Autre temps"                                     
+  5  "Ghost of Perdition"                              
+  6  "Crossing the Road Material"                      
+  7  "Hoppípolla"                                      
+  8  "Ether"                                           
+  9  "Colossus"                                        
+  10 "River"                                           
+  11 "El Tete"                                         
+  12 "Will o the Wisp"                                 
+  13 "Pakumba"                                         
+  14 "Damned Rope"                                     
+  15 "Eternal Rains Will Come"                         
+  16 "La femme d'argent"                               
+  17 "Bajanda"                                         
+  18 "Nimrodel - Medley"                               
+  19 "Breathe (In The Air) - 2011 Remastered Version"  
+  20 "In The Shadow Of Our Pale Companion"             
+                                                      ┘
+</pre>
 </div>
 </div>
 
-<div id="outline-container-org00ce59e" class="outline-2">
-<h2 id="org00ce59e"><span class="section-number-2">3</span> Top artists</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-org0ee6f54" class="outline-2">
+<h2 id="org0ee6f54">Top artists</h2>
+<div class="outline-text-2" id="text-org0ee6f54">
 <div class="org-src-container">
 <pre class="src src-bqn">a Q spd
 </pre>
 </div>
+
+<pre class="example">
+┌─                              
+╵ 1  "Opeth"                    
+  2  "Wolfgang Amadeus Mozart"  
+  3  "Pink Floyd"               
+  4  "Be'lakor"                 
+  5  "Sigur Rós"                
+  6  "Coldplay"                 
+  7  "Mogwai"                   
+  8  "Chocolate Mc"             
+  9  "Radiohead"                
+  10 "Joaquín Sabina"           
+  11 "Iron &amp; Wine"              
+  12 "Rammstein"                
+  13 "Alcest"                   
+  14 "Buena Fe"                 
+  15 "Silvio Rodríguez"         
+  16 "Amon Amarth"              
+  17 "In Mourning"              
+  18 "Lamb of God"              
+  19 "Camel"                    
+  20 "Omnium Gatherum"          
+                               ┘
+</pre>
 </div>
 </div>
 </div>

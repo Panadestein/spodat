@@ -21,7 +21,7 @@ artists, elapsed time, and the length of the desired result.
   s‿a‿m‿l ← ⟨7, 8, 3, 1+↕20⟩
 #+end_src
 
-Define a (52 chars) dyadic block function to execute the queries:
+Define a (50 chars) dyadic block function to execute the queries:
 
 #+begin_src bqn :results none
   Q ← {l≍˘∾(⍷𝕨⊸⊏˘)¨ l⊏ ((⍒(+´m⊸⊏˘)¨)⊸⊏ 𝕨⊸⊏˘⊐⊸⊔⊢) >1⊏¨ 𝕩}

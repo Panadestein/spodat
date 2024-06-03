@@ -24,7 +24,7 @@ artists, elapsed time, and the length of the desired result.
 Define a (52 chars) dyadic block function to execute the queries:
 
 #+begin_src bqn :results none
-  Q ← {l≍˘∾(⍷𝕨⊸⊏˘)¨ l⊏ ((⍒(+´m⊏⍉)¨)⊸⊏𝕨⊸⊏˘⊐⊸⊔⊢) >1⊏¨ 𝕩}
+  Q ← {l≍˘∾(⍷𝕨⊸⊏˘)¨ l⊏ ((⍒(+´m⊸⊏˘)¨)⊸⊏ 𝕨⊸⊏˘⊐⊸⊔⊢) >1⊏¨ 𝕩}
 #+end_src
 
 ** Top songs

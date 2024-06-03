@@ -16,20 +16,17 @@ code, pre {
   font-size: 0.94em;
 }
 
-pre {
+pre, pre.src {
   overflow-x: auto;
   border: 1px solid #ccc;
   border-radius: 3px;
   box-shadow: 3px 3px 3px #eee;
+  background-color: #e3e7e7;
 }
 
 pre.src {
   position: relative;
-  overflow-x: auto;
   margin: 0 2em 0 2em;
-  background-color: #e3e7e7;
-  border: 1px solid #ccc;
-  border-radius: 3px;
   padding-top: 0.7em;
 }
 

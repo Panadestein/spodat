@@ -2,46 +2,91 @@
 #+TITLE: [[https://belakor.bandcamp.com/track/countless-skies][Songs to pave the seasons]]
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../assets/style.css"/>
 
-This is the analysis of my [[https://support.spotify.com/us/article/understanding-my-data/][Spotify data]] for the period 2016-2024. The results show that
-I have an eclectic music taste, but progressive death metal is clearly my preferred
-genre.
+Analysis of my [[https://support.spotify.com/us/article/understanding-my-data/][Spotify data]] for the period 2016-2024.
 
 ** Technical details
 
-For this task, I rely on [[https://mlochbaum.github.io/BQN/index.html][BQN]], my favorite array language.
+The task is very suitable for an array language, so I rely on [[https://mlochbaum.github.io/BQN/index.html][BQN]] which is my
+favorite one:
 
-#+begin_src bqn
+#+begin_src bqn :results none
   ⟨P⇐Parse⟩ ← •Import "../bqn-libs/json.bqn"
-  "Load data and libraries" ⊣ spd ← P •file.Chars "data.json"
+  @ ⊣ spd ← P •file.Chars "data.json"
 #+end_src
 
-#+RESULTS:
+Additional structural information is needed, namely index of the songs,
+artists, elapsed time, and the length of the desired result.
 
-We need some additional structural information, namely index of the songs,
-artists, elapsed time, and the length of the result.
-
-#+begin_src bqn
-  s‿a‿m‿l ← 20 ∾˜1⊸∾¨ 7‿8‿3
+#+begin_src bqn :results none
+  s‿a‿m‿l ← ⟨7, 8, 3, 1+↕20⟩
 #+end_src
 
-#+RESULTS:
-: 0
+Define a dyadic block function to execute the queries:
+
+#+begin_src bqn :results none
+  Q ← {⍉l≍∾(⍷𝕨⊏⍉)¨l⊏ ((⍒(+´m⊏⍉)¨) ⊏ ⊢) ((⊐𝕨⊸⊏˘) ⊔ ⊢) 1⊸⊏˘> 𝕩}
+#+end_src
 
 ** Top songs
 
 #+begin_src bqn
-  musicrow ← 1⊸⊏˘>spd
-  songs ← ⊐7⊸⊏˘ musicrow
-  groupssongs ← songs ⊔ musicrow
-  idxsort ← ⍒(+´3⊏⍉)¨ groupssongs
-  ∾(⍷7⊏⍉)¨(1+↕t)⊏ idxsort ⊏ groupssongs
+  s Q spd	
 #+end_src
 
 #+RESULTS:
-: ⟨ "Countless Skies" "Divertimento I, K.136: Allegro" "The Numbers" "Autre temps" "Ghost of Perdition" "Crossing the Road Material" "Hoppípolla" "Ether" "Colossus" "River" "El Tete" "Will o the Wisp" "Pakumba" "Damned Rope" "Eternal Rains Will Come" "La femme d'argent" "Bajanda" "Nimrodel - Medley" "Breathe (In The Air) - 2011 Remastered Version" "In The Shadow Of Our Pale Companion" ⟩
+#+begin_example
+┌─                                                     
+╵ 1  "Countless Skies"                                 
+  2  "Divertimento I, K.136: Allegro"                  
+  3  "The Numbers"                                     
+  4  "Autre temps"                                     
+  5  "Ghost of Perdition"                              
+  6  "Crossing the Road Material"                      
+  7  "Hoppípolla"                                      
+  8  "Ether"                                           
+  9  "Colossus"                                        
+  10 "River"                                           
+  11 "El Tete"                                         
+  12 "Will o the Wisp"                                 
+  13 "Pakumba"                                         
+  14 "Damned Rope"                                     
+  15 "Eternal Rains Will Come"                         
+  16 "La femme d'argent"                               
+  17 "Bajanda"                                         
+  18 "Nimrodel - Medley"                               
+  19 "Breathe (In The Air) - 2011 Remastered Version"  
+  20 "In The Shadow Of Our Pale Companion"             
+                                                      ┘
+#+end_example
 
 ** Top artists
 
 #+begin_src bqn
-
+  a Q spd
 #+end_src
+
+#+RESULTS:
+#+begin_example
+┌─                              
+╵ 1  "Opeth"                    
+  2  "Wolfgang Amadeus Mozart"  
+  3  "Pink Floyd"               
+  4  "Be'lakor"                 
+  5  "Sigur Rós"                
+  6  "Coldplay"                 
+  7  "Mogwai"                   
+  8  "Chocolate Mc"             
+  9  "Radiohead"                
+  10 "Joaquín Sabina"           
+  11 "Iron & Wine"              
+  12 "Rammstein"                
+  13 "Alcest"                   
+  14 "Buena Fe"                 
+  15 "Silvio Rodríguez"         
+  16 "Amon Amarth"              
+  17 "In Mourning"              
+  18 "Lamb of God"              
+  19 "Camel"                    
+  20 "Omnium Gatherum"          
+                               ┘
+#+end_example
